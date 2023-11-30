@@ -4,7 +4,7 @@ li {
     justify-content: space-between;
     width: 440px;
     height: 59px;
-    padding: 15px;
+    padding: 15px ;
     border: 2px solid rgb(0, 102, 204);
     border-radius: 10px;
 }
