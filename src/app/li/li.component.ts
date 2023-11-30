@@ -17,18 +17,15 @@ export class LiComponent {
   @Output() editEvent = new EventEmitter<string>();
   @Output() deleteEvent = new EventEmitter<string>();
 
-
   test(check: boolean) {
     this.checkBoxEvent.emit(check);
   }
 
   editTask(task: string) {
     this.editEvent.emit(task);
-    
   }
 
   deleteTask() {
     this.deleteEvent.emit(this.task);
-    
   }
 }
