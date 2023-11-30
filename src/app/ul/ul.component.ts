@@ -9,6 +9,9 @@ import { LiComponent } from "../li/li.component";
     styleUrl: './ul.component.css',
     imports: [CommonModule, LiComponent]
 })
-export class UlComponent {
 
+export class UlComponent {
+    checkBoxEvent(check:boolean){
+        console.log(check)
+    }
 }

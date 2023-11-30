@@ -15,13 +15,20 @@ export class LiComponent {
 
   @Output() checkBoxEvent = new EventEmitter<boolean>();
   @Output() editEvent = new EventEmitter<string>();
+  @Output() deleteEvent = new EventEmitter<string>();
 
 
   test(check: boolean) {
-    console.log(check);
+    this.checkBoxEvent.emit(check);
   }
 
-  editButton(todo: string){
-    console.log(todo)
+  editTask(task: string) {
+    this.editEvent.emit(task);
+    
+  }
+
+  deleteTask() {
+    this.deleteEvent.emit(this.task);
+    
   }
 }
