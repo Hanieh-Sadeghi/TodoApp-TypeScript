@@ -16,19 +16,19 @@ export class UlComponent {
     console.log(check);
   }
 
-  // tasks = [
-  //   {
-  //     todo: 'readibooks',
-  //     status: true,
-  //   },
-  //   {
-  //     todo: 'hanie',
-  //     status: true,
-  //   },
-  //   {
-  //     todo: 'hi',
-  //     status: true,
-  //   },
-  // ];
+  tasks = [
+    {
+      todo: 'readibooks',
+      status: true,
+    },
+    {
+      todo: 'hanie',
+      status: true,
+    },
+    {
+      todo: 'hi',
+      status: true,
+    },
+  ];
 
 }
