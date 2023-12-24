@@ -1,4 +1,10 @@
 <ul id="list">
-    <app-li *ngFor ="let task of tasks" task="{{task.todo}}"></app-li>
-   
+  <app-li
+    *ngFor="let task of tasks"
+    task="{{ task.todo }}"
+    (checkBoxEvent)="checkBoxEvent($event)"
+    (editEvent)="editTaskEvent($event)"
+    (deleteEvent)="deleteTaskEvent($event)"
+
+  ></app-li>
 </ul>
