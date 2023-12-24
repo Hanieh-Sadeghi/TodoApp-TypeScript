@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LiComponent } from '../li/li.component';
 
+interface Tasks {
+  todo: string;
+  status: boolean;
+}
+
 @Component({
   selector: 'app-ul',
   standalone: true,
@@ -10,13 +15,7 @@ import { LiComponent } from '../li/li.component';
   imports: [CommonModule, LiComponent],
 })
 export class UlComponent {
-
-  checkBoxEvent(check: boolean) {
-    console.log('From ul parent componet');
-    console.log(check);
-  }
-
-  tasks = [
+  tasks: Tasks[] = [
     {
       todo: 'readibooks',
       status: true,
@@ -31,4 +30,18 @@ export class UlComponent {
     },
   ];
 
+  checkBoxEvent(check: boolean) {
+    console.log('checkBoxEvent : From ul parent componet');
+    console.log(check);
+  }
+
+  editTaskEvent(task: string) {
+    console.log('editTaskEvent :From ul parent componet');
+    console.log(task);
+  }
+
+  deleteTaskEvent(task: string) {
+    console.log('deleteTaskEvent : From ul parent componet');
+    console.log(task);
+  }
 }
