@@ -9,11 +9,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './buttons.component.css'
 })
 export class ButtonsComponent {
-  @Output() allButtonEvent = new EventEmitter<boolean> ();
-  @Output() activeButtonEvent = new EventEmitter<string> ();
-  @Output() completeButtonEvent = new EventEmitter<string> ();
-  @Output() signUpButtonEvent = new EventEmitter<string> ();
-  @Output() loginButtonEvent = new EventEmitter<string> ();
+  @Output() buttonsEvent = new EventEmitter<string> ();
+  // @Output() activeButtonEvent = new EventEmitter<string> ();
+  // @Output() completeButtonEvent = new EventEmitter<string> ();
+  // @Output() signUpButtonEvent = new EventEmitter<string> ();
+  // @Output() loginButtonEvent = new EventEmitter<string> ();
 
-
+  buttons(value : string){
+    console.log(value)
+    this.buttonsEvent.emit(value)
+  }
 }
