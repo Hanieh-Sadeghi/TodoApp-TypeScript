@@ -15,7 +15,9 @@ interface Tasks {
   imports: [CommonModule, LiComponent],
 })
 export class UlComponent {
-  @Output() ulEvent = new EventEmitter<boolean>();
+  // @Output() ulEvent = new EventEmitter<boolean>();
+  @Output() ulEvent = new EventEmitter<string>();
+
 
   tasks: Tasks[] = [
     {
@@ -33,14 +35,14 @@ export class UlComponent {
   ];
 
   checkBoxEvent(checked: boolean) {
-    // this.ulEvent.emit('1');
+    this.ulEvent.emit('1');
   }
 
   editTaskEvent(task: string) {
-    // this.ulEvent.emit('2');
+    this.ulEvent.emit('2');
   }
 
   deleteTaskEvent(task: string) {
-    // this.ulEvent.emit('3');
+    this.ulEvent.emit('3');
   }
 }
