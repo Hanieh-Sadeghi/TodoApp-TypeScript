@@ -12,9 +12,13 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [CommonModule, HederComponent, MainComponent, FooterComponent],
 })
 export class TodoComponent {
-  showTodo(todo:string){
+  
+  mianComponet(event: string) {
+    console.log(event)
+  }
+  showTodo(todo: string) {
     console.log('from parent');
     console.log(todo);
-    
   }
+
 }
