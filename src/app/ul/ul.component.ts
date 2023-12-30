@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LiComponent } from '../li/li.component';
 
@@ -15,6 +15,8 @@ interface Tasks {
   imports: [CommonModule, LiComponent],
 })
 export class UlComponent {
+  @Output() ulEvent = new EventEmitter<boolean>();
+
   tasks: Tasks[] = [
     {
       todo: 'readibooks',
@@ -30,18 +32,15 @@ export class UlComponent {
     },
   ];
 
-  checkBoxEvent(check: boolean) {
-    console.log('checkBoxEvent : From ul parent componet');
-    console.log(check);
+  checkBoxEvent(checked: boolean) {
+    // this.ulEvent.emit('1');
   }
 
   editTaskEvent(task: string) {
-    console.log('editTaskEvent :From ul parent componet');
-    console.log(task);
+    // this.ulEvent.emit('2');
   }
 
   deleteTaskEvent(task: string) {
-    console.log('deleteTaskEvent : From ul parent componet');
-    console.log(task);
+    // this.ulEvent.emit('3');
   }
 }

@@ -1,4 +1,6 @@
 <main>
-    <app-ul></app-ul>
-    <app-buttons></app-buttons>
+    <!-- <app-ul (ulEvent)="ulComponent($event)"></app-ul> -->
+    <app-ul (ulEvent)="ulComponent($event.toString())"></app-ul>
+
+    <app-buttons (buttonsEvent)="buttonsComponent($event)"></app-buttons>
 </main>

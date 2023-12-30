@@ -16,7 +16,6 @@ export class ButtonsComponent {
   // @Output() loginButtonEvent = new EventEmitter<string> ();
 
   buttons(value : string){
-    console.log(value)
     this.buttonsEvent.emit(value)
   }
 }
