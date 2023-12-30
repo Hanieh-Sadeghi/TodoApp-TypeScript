@@ -7,6 +7,12 @@ interface Tasks {
   status: boolean;
 }
 
+interface TodoEvent {
+  event: string;
+  value: boolean;
+  task: string;
+}
+
 @Component({
   selector: 'app-ul',
   standalone: true,
@@ -16,8 +22,7 @@ interface Tasks {
 })
 export class UlComponent {
   // @Output() ulEvent = new EventEmitter<boolean>();
-  @Output() ulEvent = new EventEmitter<string>();
-
+  @Output() ulEvent = new EventEmitter<TodoEvent>();
 
   tasks: Tasks[] = [
     {
@@ -35,14 +40,31 @@ export class UlComponent {
   ];
 
   checkBoxEvent(checked: boolean) {
-    this.ulEvent.emit('1');
+    let event: TodoEvent = {
+      event: 'checked',
+      value: checked,
+      task: 'test',
+    };
+
+    this.ulEvent.emit(event);
   }
 
   editTaskEvent(task: string) {
-    this.ulEvent.emit('2');
+    let event: TodoEvent = {
+      event: 'edit',
+      value: true,
+      task: task,
+    };
+
+    this.ulEvent.emit(event);
   }
 
   deleteTaskEvent(task: string) {
-    this.ulEvent.emit('3');
+    let event: TodoEvent = {
+      event: 'delete',
+      value: true,
+      task: task,
+    };
+    this.ulEvent.emit(event);
   }
 }
