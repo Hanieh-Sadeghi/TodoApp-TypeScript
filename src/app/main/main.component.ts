@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UlComponent } from '../ul/ul.component';
 import { ButtonsComponent } from '../buttons/buttons.component';
@@ -11,12 +11,16 @@ import { ButtonsComponent } from '../buttons/buttons.component';
   imports: [CommonModule, UlComponent, ButtonsComponent],
 })
 export class MainComponent {
-  ulComponent(event: string) {
+  @Output() mainEvent = new EventEmitter<string>();
+
+  ulComponent(event: any) {
+    this.mainEvent.emit('ulComponent');
+    
     console.log(event);
   }
 
   buttonsComponent(event: string) {
     console.log(event);
-
+    this.mainEvent.emit('buttonsComponent');
   }
 }
