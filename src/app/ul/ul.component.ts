@@ -12,7 +12,6 @@ interface TodoEvent {
   value: boolean;
   task: string;
 }
-
 @Component({
   selector: 'app-ul',
   standalone: true,
@@ -21,9 +20,9 @@ interface TodoEvent {
   imports: [CommonModule, LiComponent],
 })
 export class UlComponent {
-  // @Output() ulEvent = new EventEmitter<boolean>();
   @Output() ulEvent = new EventEmitter<TodoEvent>();
 
+  //interFace
   tasks: Tasks[] = [
     {
       todo: 'readibooks',
@@ -39,7 +38,7 @@ export class UlComponent {
     },
   ];
 
-  checkBoxEvent(checked: boolean) {
+  checkBoxEvent(checked: any) {
     let event: TodoEvent = {
       event: 'checked',
       value: checked,
