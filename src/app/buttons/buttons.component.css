@@ -8,7 +8,7 @@ form input[type=submit] {
     border-radius: 15px;
 }
 
-#buttons  {
+.buttons  {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -16,7 +16,7 @@ form input[type=submit] {
     flex-wrap: wrap;
 }
 
-#buttons input {
+.buttons input {
     width: 70px;
     cursor: pointer;
     margin: 0;
