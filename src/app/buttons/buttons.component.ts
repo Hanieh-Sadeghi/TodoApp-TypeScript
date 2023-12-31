@@ -10,10 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class ButtonsComponent {
   @Output() buttonsEvent = new EventEmitter<string> ();
-  // @Output() activeButtonEvent = new EventEmitter<string> ();
-  // @Output() completeButtonEvent = new EventEmitter<string> ();
-  // @Output() signUpButtonEvent = new EventEmitter<string> ();
-  // @Output() loginButtonEvent = new EventEmitter<string> ();
 
   buttons(value : string){
     this.buttonsEvent.emit(value)
