@@ -1,4 +1,4 @@
-input[type=submit] {
+/* input[type=submit] {
     color: #fff;
     background: rgb(0, 102, 204);
     font-size: 15px;
@@ -6,7 +6,7 @@ input[type=submit] {
     height: 50px;
     border: none;
     border-radius: 15px;
-}
+} */
 
 .buttons  {
     display: flex;
