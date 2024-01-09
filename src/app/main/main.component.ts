@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { UlComponent } from '../ul/ul.component';
 import { ButtonsComponent } from '../buttons/buttons.component';
 
+interface TodoEvent {
+  event: string;
+  value: boolean;
+  task: string;
+}
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -13,10 +18,9 @@ import { ButtonsComponent } from '../buttons/buttons.component';
 export class MainComponent {
   @Output() mainEvent = new EventEmitter<string>();
 
-  ulComponent(event: any) {
-    this.mainEvent.emit('ulComponent');
-    
+  ulComponent(event: TodoEvent) {
     console.log(event);
+    this.mainEvent.emit('ulComponent');
   }
 
   buttonsComponent(event: string) {
