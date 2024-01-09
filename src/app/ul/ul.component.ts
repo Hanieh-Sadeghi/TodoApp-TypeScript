@@ -12,6 +12,12 @@ interface TodoEvent {
   value: boolean;
   task: string;
 }
+
+interface checkBoxEvent {
+  value: boolean;
+  task: string;
+} 
+
 @Component({
   selector: 'app-ul',
   standalone: true,
@@ -38,7 +44,7 @@ export class UlComponent {
     },
   ];
 
-  checkBoxEvent(checked: any) {
+  checkBoxEvent(checked: checkBoxEvent) {
     let event: TodoEvent = {
       event: 'checked',
       value: checked.value,
