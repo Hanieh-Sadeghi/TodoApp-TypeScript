@@ -8,6 +8,14 @@ interface TodoEvent {
   value: boolean;
   task: string;
 }
+
+interface MainTodoEvent {
+  event: string;
+  eventValue: boolean;
+  value: string;
+  task: string;
+}
+
 @Component({
   selector: 'app-main',
   standalone: true,
@@ -16,15 +24,27 @@ interface TodoEvent {
   imports: [CommonModule, UlComponent, ButtonsComponent],
 })
 export class MainComponent {
-  @Output() mainEvent = new EventEmitter<string>();
+  @Output() mainEvent = new EventEmitter<MainTodoEvent>();
 
-  ulComponent(event: TodoEvent) {
-    console.log(event);
-    this.mainEvent.emit('ulComponent');
+  ulComponent(e: TodoEvent) {
+    let event: MainTodoEvent = {
+      event: e.event,
+      eventValue: e.value,
+      value: 'none',
+      task: e.task,
+    };
+
+    this.mainEvent.emit(event);
   }
 
-  buttonsComponent(event: string) {
-    console.log(event);
-    this.mainEvent.emit('buttonsComponent');
+  buttonsComponent(value: string) {
+    let event: MainTodoEvent = {
+      event: 'buttons',
+      eventValue: true,
+      value: value,
+      task: 'None',
+    };
+
+    this.mainEvent.emit(event);
   }
 }
