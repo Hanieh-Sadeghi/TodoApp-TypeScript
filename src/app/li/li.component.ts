@@ -11,8 +11,7 @@ interface checkBoxEvent {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './li.component.html',
-  // styles:
-  //   '@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"',
+  // styles:'@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"',
   styleUrls: ['./li.component.css'],
 })
 export class LiComponent {
@@ -25,7 +24,7 @@ export class LiComponent {
   test(check: boolean, task: string) {
     let event: checkBoxEvent = {
       value: check,
-      task: task,
+      task: this.task,
     };
     this.checkBoxEvent.emit(event);
   }

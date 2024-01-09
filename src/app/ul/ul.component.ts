@@ -41,8 +41,8 @@ export class UlComponent {
   checkBoxEvent(checked: any) {
     let event: TodoEvent = {
       event: 'checked',
-      value: checked,
-      task: 'test',
+      value: checked.value,
+      task: checked.task,
     };
 
     this.ulEvent.emit(event);
