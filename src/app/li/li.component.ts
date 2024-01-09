@@ -21,7 +21,8 @@ export class LiComponent {
   @Output() editEvent = new EventEmitter<string>();
   @Output() deleteEvent = new EventEmitter<string>();
 
-  test(check: boolean, task: string) {
+  // 
+  test(check: boolean ) {
     let event: checkBoxEvent = {
       value: check,
       task: this.task,
