@@ -4,6 +4,12 @@ import { HederComponent } from '../heder/heder.component';
 import { MainComponent } from '../main/main.component';
 import { FooterComponent } from '../footer/footer.component';
 
+interface MainTodoEvent {
+  event: string;
+  eventValue: boolean;
+  value: string;
+  task: string;
+}
 @Component({
   selector: 'app-todo',
   standalone: true,
@@ -13,11 +19,12 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class TodoComponent {
   
-  mianComponet(event: string) {
+  mianComponet(event: MainTodoEvent) {
+    console.log('from parent');
     console.log(event)
   }
-  showTodo(todo: string) {
-    console.log('from parent');
+  showTodo(todo: MainTodoEvent) {
+
     console.log(todo);
   }
 
