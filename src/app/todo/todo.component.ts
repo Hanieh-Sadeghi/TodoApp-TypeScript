@@ -4,6 +4,12 @@ import { HederComponent } from '../heder/heder.component';
 import { MainComponent } from '../main/main.component';
 import { FooterComponent } from '../footer/footer.component';
 
+
+interface Tasks {
+  todo: string;
+  status: boolean;
+}
+
 interface MainTodoEvent {
   event: string;
   eventValue: boolean;
@@ -18,14 +24,34 @@ interface MainTodoEvent {
   imports: [CommonModule, HederComponent, MainComponent, FooterComponent],
 })
 export class TodoComponent {
+
+  tasks: Tasks[] = [
+    {
+      todo: 'readibooks',
+      status: true,
+    },
+    {
+      todo: 'hanie',
+      status: true,
+    },
+    {
+      todo: 'hi',
+      status: true,
+    },
+  ];
   
   mianComponet(event: MainTodoEvent) {
     console.log('from parent');
     console.log(event)
   }
-  showTodo(todo: MainTodoEvent) {
+  showTodo(todo: string) {
 
     console.log(todo);
+    let newTask = {
+      'todo' : todo ,
+      'status' : false,
+    }
+    console.log(newTask)
   }
 
 }
