@@ -47,11 +47,12 @@ export class TodoComponent {
   showTodo(todo: string) {
 
     console.log(todo);
-    let newTask = {
+    let Tasks = {
       'todo' : todo ,
       'status' : false,
     }
-    console.log(newTask)
+    this.tasks.push(Tasks)
+    console.log(this.tasks)
   }
 
 }
