@@ -44,6 +44,7 @@ export class TodoComponent {
     console.log('from parent');
     console.log(event)
   }
+  
   showTodo(todo: string) {
 
     console.log(todo);
